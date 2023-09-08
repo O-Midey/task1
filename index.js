@@ -20,7 +20,7 @@ app.get("/api", (req, res) => {
   const currentDay = daysOfWeek[currentDate.getUTCDay()];
 
   // Get the current UTC time with a +/-2 minute window
-  const utcTime = new Date().toISOString();
+  const utcTime = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
 
   // GitHub repository information
   const githubRepoUrl = "https://github.com/O-Midey/task1";
