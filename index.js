@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 3000; // Change this to your preferred port
+const PORT = 3000;
 
 app.get("/api", (req, res) => {
   const slack_name = req.query.slack_name;
@@ -23,8 +23,8 @@ app.get("/api", (req, res) => {
   const utcTime = new Date().toISOString();
 
   // GitHub repository information
-  const githubRepoUrl = "https://github.com/username/repo";
-  const githubFileUrl = `${githubRepoUrl}/blob/main/file_name.ext`;
+  const githubRepoUrl = "https://github.com/O-Midey/task1";
+  const githubFileUrl = `${githubRepoUrl}/blob/main/index.js`;
 
   // Response JSON
   const response = {
@@ -41,5 +41,5 @@ app.get("/api", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${PORT}`);
 });
